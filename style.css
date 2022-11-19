@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	box-sizing: inherit;
+}
+
+:root {
+	--font: "Red Hat Mono", monospace;
+	--valid-letter: #12841f;
+	--valid-letter-wrong-place: #918633;
+	--not-a-word: #c11610;
+	--default-letter-bg: #807f80;
+	--letter-color: #1a1d18;
+	--submited-word-letter-color: #f8f9f8;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 100vh;
+	background-color: var(--default-letter-bg);
+}
+
+.main {
+	width: 80%;
+	position: relative;
+}
+
+.title {
+	font-family: var(--font);
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: clamp(1.31rem, calc(0.84rem + 2.34vw), 4.5rem);
+	margin-block: 1rem;
+}
+
+.loader {
+	width: 50%;
+	height: 9rem;
+	margin: 2rem auto;
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.game-board {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	gap: 2rem;
+	margin-top: 4rem;
+	padding: 1rem;
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+	gap: 1.7rem;
+	align-items: center;
+}
+
+.letter-box {
+	width: 16.67%;
+	max-width: 9rem;
+	height: 9rem;
+	padding-top: 2.4rem;
+	/* height: fit-content; */
+	border-radius: 12px;
+	/* background: linear-gradient(225deg, #898889, #737273); */
+	box-shadow: -5px 5px 20px #333333, 5px -5px 20px #cdcbcd;
+	text-align: center;
+	font-size: 50px;
+	font-family: var(--font);
+	font-weight: 700;
+}
+
+.game-instructions {
+	position: absolute;
+	top: 0;
+	left: -50px;
+	width: 50%;
+	z-index: 100;
+}
+
+.show-instructions {
+	border-radius: 12px;
+	background: #807f80;
+	box-shadow: -5px 5px 20px #333333, 5px -5px 20px #cdcbcd;
+	cursor: pointer;
+	padding: 14px 20px;
+	font-size: clamp(1.13rem, calc(1.07rem + 0.28vw), 1.5rem);
+	font-family: var(--font);
+	color: whitesmoke;
+	border: none;
+	transition: all 250ms ease;
+}
+
+.show-instructions:hover {
+	border-radius: 12px;
+	background: #807f80;
+	box-shadow: 5px 5px 10px #333333, -5px -5px 10px #cdcbcd;
+}
+
+.instructions-container {
+	transition: 500ms ease;
+	background-color: #333;
+	padding: 2%;
+	opacity: 0;
+	pointer-events: none;
+	border-radius: 10px;
+	margin-top: 1rem;
+}
+
+.instruction-list {
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.instruction {
+	font-size: clamp(1.13rem, calc(1.07rem + 0.28vw), 1.5rem);
+	font-family: var(--font);
+	font-weight: 400;
+	margin-block: 1rem;
+	color: var(--submited-word-letter-color);
+	letter-spacing: 2px;
+	line-height: 1.5;
+}
+
+.rule-box {
+	width: 2rem;
+	height: 2rem;
+	color: var(--submited-word-letter-color);
+	display: grid;
+	place-content: center;
+	font-size: 24px;
+}
+
+.rule-box:first-of-type {
+	background-color: var(--valid-letter);
+}
+
+.rule-box:nth-of-type(2) {
+	background-color: var(--valid-letter-wrong-place);
+}
+
+.rule-box:last-child {
+	border: 2px solid red;
+}
+
+.toggle-instructions {
+	opacity: 0.9;
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80%;
+	background-color: #1a1d18;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	font-family: var(--font);
+	font-size: 2rem;
+	text-align: center;
+	color: var(--submited-word-letter-color);
+	padding: 16px;
+	transition: all 500ms ease-in-out;
+}
+
+#modal {
+	opacity: 0;
+}
+
+.modal-btn {
+	padding: 10px 16px;
+	margin-bottom: 1rem;
+	font-family: var(--font);
+	font-weight: 700;
+	border-radius: 12px;
+	box-shadow: 5px 5px 10px #333333, 0px 0px 10px #cdcbcd;
+	cursor: pointer;
+	transition: all 350ms ease;
+}
+
+.modal-btn:hover {
+	border-radius: 12px;
+	background: #807f80;
+	box-shadow: 5px 5px 10px #333333, 0px 0px 10px #cdcbcd;
+	color: var(--submited-word-letter-color);
+}

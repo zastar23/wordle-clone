@@ -1,0 +1,11 @@
+{
+  "name": "wordle-clone",
+  "version": "1.0.0",
+  "description": "A copy of the famous wordle app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Florin Porut",
+  "license": "ISC"
+}

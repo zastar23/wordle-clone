@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Wordle Clone</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">Word Masters</h1>
+
+        <hr class="line" />
+        <div class="loader"></div>
+    </header>
+    <main class="main">
+        <section class="game-board">
+            <div class="row first-row">
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+
+            </div>
+            <div class="row second-row">
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+
+            </div>
+            <div class="row third-row">
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+
+            </div>
+            <div class="row fourth-row">
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+
+            </div>
+            <div class="row fifth-row">
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+
+            </div>
+            <div class="row sixth-row">
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+                <div class="letter-box"></div>
+
+            </div>
+        </section>
+        <section class="game-instructions">
+            <button class="show-instructions">View Instructions</button>
+            <div class="instructions-container">
+                <ul class="instruction-list">
+                    <li class="instruction">There is a secret five letter word chosen.</li>
+                    <li class="instruction">Players have six guesses to figure out the secret word. After six guesses,
+                        they lose.</li>
+                    <li class="instruction">If the player guesses a letter that is in the right place, it is shown as
+                        green.</li>
+                    <div class="rule-box">A</div>
+                    <li class="instruction">If the player guesses a letter that is in the word but not in the right
+                        place, it is shown as yellow.</li>
+                    <div class="rule-box">A</div>
+                    <li class="instruction">If the player guesses the right word, the player wins and the game is over.
+                    </li>
+                    <li class="instruction">Letters that are not part of the secret word are marked with a red border
+                    </li>
+                    <div class="rule-box">A</div>
+                </ul>
+            </div>
+        </section>
+        <div id="modal">
+            <h2 class="modal-title">Well Done!</h2>
+            <p class="modal-text">Congratulations you won this round!</p>
+            <button class="modal-btn">Play Again!</button>
+        </div>
+    </main>
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
